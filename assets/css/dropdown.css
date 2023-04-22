@@ -1,0 +1,74 @@
+.dropdown {
+    position: relative;
+}
+
+.dropdown h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    user-select: none;
+    transition: 0.25s background ease;
+}
+
+.dropdown.open h3 {
+    background: var(--background-highlight-color);
+}
+
+.dropdown ul {
+    /* Position and transformation */
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    transform-origin: top right;
+    transform: scale(0.9);
+
+    /* Size */
+    min-width: 12rem;
+    padding: 0.5rem;
+
+    /* Style */
+    background: var(--background-highlight-color);
+    border-radius: 0.5rem;
+    list-style: none;
+    opacity: 0;
+    transition: 0.5s transform cubic-bezier(0.16, 1, 0.3, 1),
+                0.5s opacity cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Function */
+    pointer-events: none;
+}
+
+.dropdown.open ul {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.dropdown svg {
+    transition: 0.25s transform ease;
+}
+
+.dropdown.open svg {
+    transform: rotateX(180deg);
+}
+
+.dropdown li {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 50%, transparent 50%);
+    background-size: 200%;
+    background-position-x: 100%;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: var(--text-color);
+    transition: 0.15s ease;
+}
+
+.dropdown li:hover {
+    color: var(--text-color-inverted);
+    background-position-x: 0%;
+}
+
+.dropdown li:active {
+    background: #ffffff;
+    color: var(--text-color-inverted);
+}

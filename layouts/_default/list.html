@@ -1,0 +1,44 @@
+{{ define "main" }}
+    {{ partial "hero.html" . }}
+    
+    <div class="list-grid">
+        {{ range .Paginator.Pages }}
+            <a href="{{ .Permalink }}" style="text-decoration: none;">
+                {{ partial "post-card.html" . }}  
+            </a>
+        {{ end }}
+    </div>
+
+    <div class="paginator">
+        {{ with .Paginator.Prev }}
+            <a class="paginator-cell" href="{{ .URL }}">
+                {{ with resources.Get "img/icon/chevron-left.svg" }}
+                        {{ .Content | safeHTML }}
+                {{ end }}
+            </a>
+        {{ end }}
+        
+        {{ $greater := where .Paginator.Pagers "PageNumber" ">=" (sub .Paginator.PageNumber 2) }}
+        {{ $lesser := where .Paginator.Pagers "PageNumber" "<=" (add .Paginator.PageNumber 2) }}
+        {{ $filter := $greater | intersect $lesser }}
+        
+        {{ range $filter }}
+            {{ if eq .PageNumber $.Paginator.PageNumber }}
+            <p class="paginator-cell">{{ .PageNumber }}</p>
+            {{ else }}
+            <a class="paginator-cell" href="{{ .URL }}">{{ .PageNumber }}</a>
+            {{ end }}
+        {{ end }}
+
+
+        {{ with .Paginator.Next }}
+            <a class="paginator-cell" href="{{ .URL }}">
+                {{ with resources.Get "img/icon/chevron-right.svg" }}
+                        {{ .Content | safeHTML }}
+                {{ end }}
+            </a>
+        {{ end }}
+    </div>
+
+    <!-- TODO: add RSS subscribe button -->
+{{ end }}

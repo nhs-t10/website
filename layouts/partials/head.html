@@ -1,0 +1,41 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Generic -->
+    <meta property="description" content="{{ .Site.Params.description }}" />
+    <meta property="keywords" content="{{ .Site.Params.keywords }}" />
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="{{ .Site.LanguageCode }}" />
+    <meta property="og:url" content="{{ .Site.BaseURL }}" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:description" content="{{ .Site.Params.description }}" />
+    <meta property="og:keywords" content="{{ .Site.Params.keywords }}" />
+
+    <!-- Twitter -->
+    <meta property="twitter:title" content="{{ .Site.Title }}" />
+    <meta property="twitter:description" content="{{ .Site.Params.description }}" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <!-- Output formats -->
+    {{ range .AlternativeOutputFormats -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+
+    {{ if .IsHome }}
+        <title>{{ .Site.Title }}</title>
+    {{ else }}
+        <title>{{ .Page.Title }} | {{ .Site.Title }}</title>
+    {{ end }}
+
+    <!-- Merge all css files, then minify and fingerprint the merged file  -->
+    {{ $css := resources.Match "css/**.css" | resources.Concat "all.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}">
+
+    {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+    <script defer src="{{ $js.Permalink }}"></script>
+</head>

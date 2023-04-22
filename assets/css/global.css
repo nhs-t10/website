@@ -1,0 +1,99 @@
+/**
+ * General styles for the entire website
+ */
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-normal);
+}
+
+main {
+    min-height: 100vh;
+}
+
+header {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 50vh;
+}
+
+header.centered {
+    height: 80vh;
+}
+
+header.centered > * {
+    margin: auto;
+    text-align: center;
+}
+
+header video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(25%);
+    z-index: -100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+}
+
+a {
+    color: var(--text-color-link);
+    transition: 0.1s color ease;
+}
+
+a:hover {
+    color: var(--text-color-link-hover);
+}
+
+/* Navigation */
+nav {
+    background: var(--background-color);
+    display: flex;
+    align-items: center;
+    border-bottom: var(--background-lighter-color) 1px solid;
+    top: 0;
+    position: sticky;
+    width: 100%;
+    z-index: 100;
+}
+
+nav h3 {
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+
+nav h3:hover {
+    background: var(--background-highlight-color);
+    cursor: pointer;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--text-color);
+}
+
+nav .nav-left {
+    margin-right: auto;
+    margin-left: var(--nav-element-side-marign);
+}
+
+nav .nav-right {
+    margin-left: auto;
+    margin-right: var(--nav-element-side-marign);
+    display: flex;
+    gap: 1rem;
+}

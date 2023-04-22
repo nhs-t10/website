@@ -1,0 +1,23 @@
+baseURL = 'http://localhost:8000/'
+languageCode = 'en-us'
+title = 'T-10 Robotics'
+enableRobotsTXT = true
+paginate = 9
+
+[params]
+description = 'T-10 (#4096) is a FIRST Tech Challenge (FTC) high school robotics team based at Needham High School in Needham, MA.'
+
+# Comma separated keywords
+keywords = 't-10,t minus ten,robotics,ftc,first tech challenge,robot,stem,engineering,high school,tech,technology,outreach,programming,education,design'
+
+# Special date used to format Hugo dates: Mon Jan 2 15:04:05 MST 2006
+# See https://gohugo.io/functions/format/
+dateFormat = 'January 02, 2006'
+
+social_github = 'https://github.com/nhs-t10'
+social_twitter = 'https://twitter.com/TMinusTenFTC'
+social_instagram = 'https://www.instagram.com/champagnepapi'
+social_youtube = 'https://www.youtube.com/@successinsecret/'
+
+[markup.goldmark.renderer]
+  unsafe = true

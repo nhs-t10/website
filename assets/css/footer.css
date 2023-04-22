@@ -1,0 +1,22 @@
+footer {
+    background: var(--background-darker-color);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+}
+
+footer > * {
+    margin: 0 auto 0 auto;
+}
+
+.socials {
+    display: flex;
+    gap: 2rem;
+}
+
+.social-link {
+    text-decoration: none;
+    color: var(--text-color);
+}

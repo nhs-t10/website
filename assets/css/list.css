@@ -1,0 +1,45 @@
+.list-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding-bottom: 4rem;
+
+    width: 65%;
+    margin: auto;
+}
+
+.paginator {
+    display: flex;
+    align-items: center;
+}
+
+.paginator-cell {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-darker-color);
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.paginator p {
+    background: var(--background-lighter-color);
+}
+
+.paginator-cell:nth-child(1) {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    margin-left: auto;
+}
+
+.paginator-cell:nth-last-child(1) {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin-right: auto;
+}
+
+.paginator-cell:hover {
+    background: var(--background-lighter-color);
+}

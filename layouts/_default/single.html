@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article>
+    {{ partial "hero.html" . }}
+
+    <div class="content">
+        {{ if isset .Params "author" }}
+            <div style="margin: 2rem 0 2rem 0">
+                {{ partial "author-info.html" . }}
+            </div>
+        {{ end }}
+
+        <div class="article-source">
+            {{ .Content | emojify }}
+        </div>
+    </div>
+</article>
+{{ end }}

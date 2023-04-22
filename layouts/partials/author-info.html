@@ -1,0 +1,12 @@
+<div class="author-info">
+    <img src="{{ .Params.author_image }}" alt="{{ .Params.author }}'s profile picture" />
+    
+    <div class="author-details">
+        <p>By <strong>{{ .Params.author }}</strong></p>
+        
+        <p>
+            {{ .PublishDate.Format .Site.Params.dateFormat }} &bull;
+            {{ .ReadingTime }} min. read
+        </p>
+    </div>
+</div>

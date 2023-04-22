@@ -1,0 +1,42 @@
+<nav>
+    <div class="nav-left">
+        <a href="/">
+            <h1>{{ .Site.Title }}</h1>
+        </a>
+    </div>
+
+    <div class="nav-right">
+        <div class="dropdown">
+            {{ with resources.Get "img/icon/chevron-down.svg" }}
+            <h3>Team {{ .Content | safeHTML }}</h3>
+            {{ end }}
+
+            <ul>
+                {{ with .Site.GetPage "/about" }}
+                <a href="{{ .Permalink }}"><li>{{ .Name }}</li></a>
+                {{ end }}
+
+                {{ with .Site.GetPage "/sponsors" }}
+                <a href="{{ .Permalink }}"><li>{{ .Name }}</li></a>
+                {{ end }}
+
+                {{ with .Site.GetPage "/contact-us" }}
+                <a href="{{ .Permalink }}"><li>{{ .Name }}</li></a>
+                {{ end }}
+            </ul>
+        </div>
+        
+
+        <div class="dropdown">
+            {{ with resources.Get "img/icon/chevron-down.svg" }}
+            <h3>Updates {{ .Content | safeHTML }}</h3>
+            {{ end }}
+
+            <ul>
+                {{ range .Site.Sections }}
+                <a href="{{ .Permalink }}"><li>{{ .Title }}</li></a>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</nav>

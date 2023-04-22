@@ -1,0 +1,11 @@
+<div class="post-card">
+    <img class="featured-image" src="{{ .Params.featured_image }}" />
+
+    <div class="card-content">
+        <h2>{{ .Title }}</h2>
+
+        {{ .Params.summary | emojify}}
+
+        {{ partial "author-info.html" . }}
+    </div>
+</div>

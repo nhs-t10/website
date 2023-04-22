@@ -1,0 +1,20 @@
+.author-info {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.author-info img {
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.author-info .author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-info .author-details > * {
+    margin: auto 0 auto 0;
+}

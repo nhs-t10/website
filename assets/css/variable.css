@@ -1,0 +1,23 @@
+/**
+ * Website palette, design variables, and other miscellaneous variables
+ */
+
+:root {
+    /* Palette */
+    --text-color: #ffffff;
+    --text-color-shadow: #bbbbbb;
+    --text-color-inverted: #000000;
+    --text-color-link: hsl(198, 74%, 54%);
+    --text-color-link-hover: hsl(198, 74%, 84%);
+
+    --background-darker-color: hsl(240, 30%, 20%);
+    --background-color: hsl(240, 30%, 25%);
+    --background-lighter-color: hsl(240, 30%, 35%);
+    --background-highlight-color: hsl(240, 30%, 50%);
+
+    /* Font */
+    --font-heading: 'Panton';
+    --font-normal: 'Roboto', sans-serif;
+
+    --nav-element-side-marign: 4rem;
+}

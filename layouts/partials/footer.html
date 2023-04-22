@@ -1,0 +1,19 @@
+<footer>
+    <h1>{{ .Site.Title }}</h1>
+
+    <div class="socials">
+        {{ range $key, $component := .Site.Params }}
+            {{ $image_url := printf "img/icon/social/%s.svg" $key }}
+            
+            {{ if hasPrefix $key "social_" }}
+                <a href="{{ $component }}" target="_blank" class="social-link">
+                    {{ with resources.Get $image_url }}
+                    {{ .Content | safeHTML }}
+                    {{ end }}
+                </a>
+            {{ end }}
+        {{ end }}
+    </div>
+
+    <p>Copyright &copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> and <a href="https://pocolifo.com">Pocolifo</a></p>
+</footer>

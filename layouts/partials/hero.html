@@ -1,0 +1,7 @@
+<header>
+    <h1 class="article-title">{{ .Title }}</h1>
+    
+    {{ if isset .Params "featured_image" }}
+        <img src="{{ .Params.featured_image }}" alt="{{ .Params.title }}" />
+    {{ end }}
+</header>
