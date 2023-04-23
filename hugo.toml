@@ -1,8 +1,9 @@
-baseURL = 'http://localhost:8000/'
+baseURL = 'https://nhs-t10.github.io/website/'
 languageCode = 'en-us'
 title = 'T-10 Robotics'
 enableRobotsTXT = true
 paginate = 9
+canonifyurls = true
 
 [params]
 description = 'T-10 (#4096) is a FIRST Tech Challenge (FTC) high school robotics team based at Needham High School in Needham, MA.'
