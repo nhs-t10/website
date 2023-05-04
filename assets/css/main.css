@@ -1,0 +1,152 @@
+p {
+    padding: 20px;
+    border: 1px solid gray;
+  }
+  .mobile-extend{
+    height:60vh;
+    position: relative;
+    top: 290vh;
+  }
+  .collection-item{
+    height: 28vh;
+  }
+  .collection-item p{
+    margin-top: 25px;
+  }
+  .circbtn {
+    padding: 30px;
+    border: 2px solid blue;
+    border-radius: 50%;
+  }
+
+  img {
+    padding: 80px;
+    border: 2px solid yellow;
+  }
+
+  descr {
+    padding: 20px;
+    border: 1px solid yellow
+  }
+
+  .event_background {
+    background-image: url(https://wallpaperaccess.com/full/956711.jpg);
+
+  }
+
+  .anim11 {
+    animation: anim11 6s infinite;
+    color: blue;
+  }
+
+  .animatep {
+    text-transform: uppercase;
+    border: 0px;
+    position: relative;
+
+  }
+  .modalactivate {
+    animation: enlarge 0.25s linear;
+
+
+  }
+  .modalclosed {
+    animation: closeModal 0.2s linear;
+
+
+
+  }
+  .active {
+      background-color: #ffa30a
+    }
+
+    .indicator {
+      background-color: #0311ff !important
+    }
+  .animatedtext {
+
+    font: 700 4em/1 "Oswald", sans-serif;
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255, 255, 255, .5);
+    width: 40%;
+
+    /* Clip Background Image */
+
+    background: url(https://www.xmple.com/wallpaper/stripes-lines-streaks-blue-orange-1920x1080-c2-ee791c-4682b4-l2-185-185-a-255-f-1.svg) repeat-x;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+
+
+    /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 2s linear infinite;
+
+    /* Activate hardware acceleration for smoother animations */
+
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+
+  }
+
+  /* Animate Background Image */
+
+  @-webkit-keyframes aitf {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: 130% 50%;
+    }
+  }
+
+  @keyframes anim11 {
+    0% {
+      color: orange;
+    }
+
+    25% {
+      color: yellow;
+    }
+
+    50% {
+      color: blue;
+    }
+
+    75% {
+      color: yellow;
+    }
+
+    100% {
+      color: orange;
+    }
+  }
+  @keyframes enlarge {
+    0%{
+      transform: scale(0.2);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+  @keyframes closeModal {
+    0%{
+      transform: scale(1);
+    }
+    100%{
+      transform: scale(0.2);
+    }
+  }
+  @media only screen and (max-width:375px) {
+    .mobile-extend{
+        height:60vh;
+        position: relative;
+        top: 210vh;
+    }
+  }
